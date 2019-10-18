@@ -73,7 +73,7 @@ client.on('ready', () => {
 
 function leftToEight() {
     var d = new Date();
-    return (-d + d.setHours(14, 00, 0, 0));
+    return (-d + d.setHours(12, 00, 0, 0));
 }
 
 function sendMessage() {
