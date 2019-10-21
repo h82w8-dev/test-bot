@@ -25,7 +25,7 @@ client.on("ready",() => {
     console.log(`I am now online, my name is ${client.user.username}`);
 
     setInterval(async () => {
-        let textList = ['В 14-00', 'Выборы пидора дня']
+        let textList = ['как работают негры', 'иммолейт импрувед']
         var text = textList[Math.floor(Math.random() * textList.length)];
         client.user.setActivity("" + text, { type: 'WATCHING' })
     }, 5000) // milliseconds
@@ -73,7 +73,7 @@ client.on('ready', () => {
 
 function leftToEight() {
     var d = new Date();
-    return (-d + d.setHours(10, 00, 0, 0));
+    return (-d + d.setHours(10, 40, 0, 0));
 }
 
 function sendMessage() {
