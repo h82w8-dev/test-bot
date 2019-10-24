@@ -60,30 +60,6 @@ client.on("message", async message => {
 
 });
 
-
-client.on('ready', () => {
-    setTimeout(function () { // in leftToEight() milliseconds run this:
-        sendMessage(); // send the message once
-        var dayMillseconds = 1000 * 60 * 60 * 24;
-        setInterval(function () { // repeat this every 24 hours
-            sendMessage();
-        }, dayMillseconds)
-    }, leftToEight())
-})
-
-function leftToEight() {
-    var d = new Date();
-    return (-d + d.setHours(09, 01, 0, 0));
-}
-
-function sendMessage() {
-    var guild = client.guilds.get('259759253244346369');
-    if (guild && guild.channels.get('626149716530429968')) {
-        guild.channels.get('626149716530429968').send("_999");
-    }
-}
-
-
 client.on('message', message => {
     if (message.content.startsWith("_999")) {
         message.delete()
