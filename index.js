@@ -64,7 +64,7 @@ client.on('message', message => {
     if (message.content.startsWith("_999")) {
         message.delete()
         const user = message.guild.members.random();
-        const quotes = ["Что тут у нас ? \n А моглибы на работе делом заниматься... \n Проверяю дымоходы...\n Стоять! Не двигаться! Вы обявленны пидором дня, ", "Инициирую поиск пидора дня.. \n Машины выехали \n Так-так, что же тут у нас... \n Сегодня ты пидор,", "Woob-woob, that's da sound of da pidor-police! \n Выезжаю на место... \n Но кто же он? \n Вот и ты пидор дня "];
+        const quotes = ["Что тут у нас ? \n А моглибы на работе делом заниматься... \n Проверяю дымоходы...\n Стоять! Не двигаться! Вы обявленны пидором дня, ", "Инициирую поиск пидора дня.. \n Машины выехали \n Так-так, что же тут у нас... \n Сегодня ты пидор,", "Woob-woob, that's da sound of da pidor-police! \n Выезжаю на место... \n Но кто же он? \n Вот и ты пидор дня""Извините, сегодня **пидора дня не будет** \n Расходимся \n Ладно, обманул \n Лучше я сдохну ебучим ноунеймом, чем прославлюсь и стану тобой"];
         const theSpam = quotes[Math.floor(Math.random() * quotes.length)]
         if (message.author.id === '240915627924127744'){
             message.channel.send(theSpam + `${user.user}`)
