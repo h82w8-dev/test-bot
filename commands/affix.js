@@ -1,1 +1,1 @@
-module.exports = require('././affixes')
+module.exports = require('./affixes')
