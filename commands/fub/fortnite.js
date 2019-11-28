@@ -30,7 +30,7 @@ module.exports = {
             store.forEach(el => {
                 embed.addField(el.name,stripIndents`**- Rarity:** ${el.rarity}
                 **- Price:** ${el.vbucks} v-bucks
-                **-Image:** [Press me](${el.image})`, true)
+                **- Image:** [Press me](${el.image})`, true)
             });
 
             message.channel.send(embed);
