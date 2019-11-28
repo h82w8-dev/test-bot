@@ -16,7 +16,24 @@ module.exports = {
         
         // Here's the code for next video
         if (args[0].toLowerCase() === "store") {
+            const store = await ft.store();
+
+            const embed = new RichEmbed()
+                .setColor("#9d4dbb")
+                .setFooter("Fortnite store", message.author.displayAvatarURL)
+                .setTimestamp();
+
+            store.sort((a, b) => {
+                return b.vbucks - a.vbucks;
+            });
             
+            store.forEach(el => {
+                embed.addField(el.name,stripIndents`**- Rarity:** ${el.rarity}
+                **- Price:** ${el.vbucks} v-bucks
+                **-Image:** [Press me](${el.image})`, true)
+            });
+
+            message.channel.send(embed);
         } else {
             // Get the last word from the args array
             const lastWord = args[args.length - 1].toLowerCase();
