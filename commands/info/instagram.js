@@ -38,6 +38,6 @@ module.exports = {
             **- Following:** ${account.edge_follow.count}
             **- Privete account:** ${account.is_private ? "Yes 🔒" : "Nope 🔓"}`);
 
-        message.channel.send(embed);
+        console.log(res);
     }
 }
