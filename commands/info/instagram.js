@@ -1,5 +1,6 @@
 const RichEmbed = require("discord.js");
 const stripIndets = require("common-tags");
+const fetch = require("node-fetch");
 
 module.exports = {
     name:"instagram",
