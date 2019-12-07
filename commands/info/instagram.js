@@ -1,17 +1,15 @@
 const RichEmbed = require("discord.js");
 const stripIndets = require("common-tags");
-const fetch = require("node-fetch");
 
+const fetch = require("node-fetch");
 module.exports = {
     name:"instagram",
     aliases: ["insta"],
     category: "info",
     description: "Find out some instagram statistic",
     usage: "<name>",
-    
     run: async (client, message, args) => {
     const name = args.join(" ");
-
         if (!name) {
             return message.reply("Maybe it's useful to search...")
                 .then(m => m.delete(5000));
