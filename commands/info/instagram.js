@@ -32,12 +32,12 @@ module.exports = {
             .setTitle(account.full_name)
             .setURL(account.external_url_linkshimmed)
             .setThumbnail(account.profile_pic_url_hd)
-            .addField("Profile Information", stripIndets` **- Username:** ${account.username}
+            .addField("Profile Information", stripIndets`**- Username:** ${account.username}
             **- Fullname:** ${account.full_name}
             **- Biography:** ${account.biography.lenght == 0 ? "none" : account.biography}
-            **- Posts** ${account.edge_owner_to_timeline_media}
-            **- Followers:** ${account.edge_followed_by.cont}
-            **- Following:** ${account.edge_follow.cont}
+            **- Posts** ${account.edge_owner_to_timeline_media.count}
+            **- Followers:** ${account.edge_followed_by.count}
+            **- Following:** ${account.edge_follow.count}
             **- Privete account:** ${account.is_private ? "Yes 🔒" : "Nope 🔓"}`);
 
         message.channel.send(embed);
