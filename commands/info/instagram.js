@@ -30,7 +30,7 @@ module.exports = {
         const embed = new RichEmbed()
             .setColor("RANDOM")
             .setTitle(account.full_name)
-            .setURL(account.external_url_linkshimed)
+            .setURL(account.external_url_linkshimmed)
             .setThumbnail(account.profile_pic_url_hd)
             .addField("Profile Information", stripIndets` **- Username:** ${account.username}
             **- Fullname:** ${account.full_name}
