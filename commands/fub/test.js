@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 module.exports = {
     name: "test",
     aliases: ["t"],
-    category: "fun",
+    category: "fub",
     description: "affix mb?",
     run: async (client, message, args) => {
         const name = args.join(" ");
