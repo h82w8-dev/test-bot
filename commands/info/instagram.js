@@ -1,25 +1,30 @@
 const { RichEmbed } = require("discord.js");
-const { stripIndets } = require("common-tags");
+const { stripIndents } = require("common-tags");
 
 const fetch = require("node-fetch");
+
 module.exports = {
-    name:"instagram",
+    name: "instagram",
     aliases: ["insta"],
     category: "info",
-    description: "Find out some instagram statistic",
+    description: "Find out some nice instagram statistics",
     usage: "<name>",
     run: async (client, message, args) => {
-    const name = args.join(" ");
+        const name = args.join(" ");
+
         if (!name) {
-            return message.reply("Maybe it's useful to search...")
+            return message.reply("Maybe it's useful to actually search for someone...!")
                 .then(m => m.delete(5000));
         }
 
         const url = `https://instagram.com/${name}/?__a=1`;
-        const res = await fetch(url).then(url => url.json());
+        
+        let res; 
 
-        if (!res.graphql.user.username) {
-            return message.reply("no user find...")
+        try {
+            res = await fetch(url).then(url => url.json());
+        } catch (e) {
+            return message.reply("I couldn't find that account... :(")
                 .then(m => m.delete(5000));
         }
 
@@ -30,14 +35,14 @@ module.exports = {
             .setTitle(account.full_name)
             .setURL(`https://instagram.com/${name}`)
             .setThumbnail(account.profile_pic_url_hd)
-            .addField("Profile Information", stripIndets`**- Username:** ${account.username}
-            **- Fullname:** ${account.full_name}
-            **- Biography:** ${account.biography.lenght == 0 ? "none" : account.biography}
-            **- Posts** ${account.edge_owner_to_timeline_media.count}
+            .addField("Profile information", stripIndents`**- Username:** ${account.username}
+            **- Full name:** ${account.full_name}
+            **- Biography:** ${account.biography.length == 0 ? "none" : account.biography}
+            **- Posts:** ${account.edge_owner_to_timeline_media.count}
             **- Followers:** ${account.edge_followed_by.count}
             **- Following:** ${account.edge_follow.count}
-            **- Privete account:** ${account.is_private ? "Yes 🔒" : "Nope 🔓"}`);
+            **- Private account:** ${account.is_private ? "Yes 🔐" : "Nope 🔓"}`);
 
-        console.log(res);
+        message.channel.send(embed);
     }
 }
