@@ -10,15 +10,13 @@ module.exports = {
     description: "Find out some nice instagram statistics",
     usage: "<name>",
     run: async (client, message, args) => {
-        const name = args.join(" ");
-
-        if (!name) {
-            return message.reply("Maybe it's useful to actually search for someone...!")
-                .then(m => m.delete(5000));
-        }
-
-        const url = `https://wowaffixes.info`;
-        console.log(res);
+        
+    fetch('https://wowaffixes.info')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(err => ...)
         
         
     }
