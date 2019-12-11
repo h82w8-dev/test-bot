@@ -4,8 +4,8 @@ const { stripIndents } = require("common-tags");
 const fetch = require("node-fetch");
 
 module.exports = {
-    name: "instagram",
-    aliases: ["insta"],
+    name: "lol",
+    aliases: ["l"],
     category: "info",
     description: "Find out some nice instagram statistics",
     usage: "<name>",
