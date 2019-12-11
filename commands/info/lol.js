@@ -13,12 +13,12 @@ module.exports = {
         const name = args.join(" ");
 
         if (!name) {
-            return message.reply("Maybe it's useful to actually search for someone...!")
+            return message.reply("search for ...!")
                 .then(m => m.delete(5000));
         }
         
         const url = `https://wowaffixes.info`;
-        const res = fetch(url).then(url => url.json());
+        const res = await fetch(url).then(url => url.json());
 
         console.log(res);
 
