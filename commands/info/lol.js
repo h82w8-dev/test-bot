@@ -17,7 +17,7 @@ module.exports = {
                 .then(m => m.delete(5000));
         }
         
-        const url = `https://wowaffixes.info`;
+        const url = `https://mythicpl.us/${name}`;
         const res = await fetch(url).then(url => url.json());
 
         console.log(res);
